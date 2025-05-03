@@ -2,7 +2,6 @@ import React from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
 } from "./ui/breadcrumb";
@@ -19,7 +18,7 @@ import { Button } from "./ui/button";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-[65px] border-b border-gray-200 flex items-center justify-between px-5">
+    <div className="w-full h-[65px] border-b border-gray-200 flex items-center justify-between px-5 flex-none">
       <div className="flex">
         <Breadcrumb>
           <BreadcrumbList>

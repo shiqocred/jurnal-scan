@@ -1,0 +1,37 @@
+{
+  "Login": {
+    "quote": {
+      "title": "<p>More Than Just <span>Writing.</span></p>",
+      "description": "It's not just about writing. It's about preserving life's traces, building a personal archive, and passing down stories to future generations."
+    },
+    "form": {
+      "title": "Nice to see you again",
+      "label": {
+        "email": "Email",
+        "password": "Password",
+        "remember_me": "Remember me",
+        "forget_password": "Forgot Password?",
+        "login": {
+          "link": "Send login link",
+          "password": "Continue with password",
+          "submit": "Login"
+        },
+        "sso": {
+          "google": "Login with Google",
+          "github": "Login with Github"
+        },
+        "opsi": "or"
+      },
+      "error": {
+        "email": "Invalid email address",
+        "password": {
+          "char": "Password must be at least 8 characters",
+          "capital": "Password must contain at least 1 capital letter",
+          "number": "Password must contain at least 1 number",
+          "symbol": "Password must contain at least 1 symbol"
+        }
+      },
+      "foot": "<p>Don't have an account? <Link>Sign up now</Link></p>"
+    }
+  }
+}

@@ -3,23 +3,13 @@
 import * as React from "react";
 import {
   BookIcon,
-  BookOpen,
-  Bot,
   Check,
   ChevronsUpDown,
   Clock,
   Cloud,
   Command,
-  Frame,
-  GalleryVerticalEnd,
   Home,
-  LifeBuoy,
-  Map,
-  PieChart,
   Plus,
-  Send,
-  Settings2,
-  SquareTerminal,
   Star,
   Trash2,
 } from "lucide-react";
@@ -33,6 +23,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarSeparator,
 } from "@/components/ui/sidebar";
 import {
   DropdownMenu,
@@ -44,145 +35,21 @@ import {
 import Link from "next/link";
 import { Progress } from "./ui/progress";
 
-const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  navMain: [
-    {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  navSecondary: [
-    {
-      title: "Support",
-      url: "#",
-      icon: LifeBuoy,
-    },
-    {
-      title: "Feedback",
-      url: "#",
-      icon: Send,
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
-};
-
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar {...props} className="bg-white border-slate-200">
-      <SidebarHeader className="border-b border-slate-200">
+      <SidebarHeader className="border-b border-slate-200 bg-slate-100">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <Link href="#">
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <Command className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-bold">Journal Inc</span>
                 </div>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
@@ -196,7 +63,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <DropdownMenuTrigger asChild>
                     <SidebarMenuButton
                       size="lg"
-                      className="data-[state=open]:text-sidebar-accent-foreground hover:bg-jurnal-secondary/20 data-[state=open]:bg-jurnal-secondary/20"
+                      className="data-[state=open]:text-sidebar-accent-foreground hover:bg-jurnal-secondary/20 data-[state=open]:bg-jurnal-secondary/20 outline-0 ring-0 mt-2"
                     >
                       <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-jurnal-secondary text-jurnal-primary">
                         S
@@ -230,10 +97,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </DropdownMenu>
           </SidebarMenu>
         </SidebarGroup>
+        <SidebarSeparator />
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild className="hover:gap-3 transition-all">
+              <SidebarMenuButton
+                asChild
+                className="hover:gap-3 transition-all data-[state=open]:text-sidebar-accent-foreground hover:bg-jurnal-secondary/20 data-[state=open]:bg-jurnal-secondary/20"
+              >
                 <Link href={"/dashboard/home"}>
                   <Home className="size-4" />
                   <span className="font-medium">Beranda</span>
@@ -241,7 +112,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild className="hover:gap-3 transition-all">
+              <SidebarMenuButton
+                asChild
+                className="hover:gap-3 transition-all data-[state=open]:text-sidebar-accent-foreground hover:bg-jurnal-secondary/20 data-[state=open]:bg-jurnal-secondary/20"
+              >
                 <Link href={"/dashboard/book"}>
                   <BookIcon className="size-4" />
                   <span className="font-medium">Buku</span>
@@ -249,7 +123,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild className="hover:gap-3 transition-all">
+              <SidebarMenuButton
+                asChild
+                className="hover:gap-3 transition-all data-[state=open]:text-sidebar-accent-foreground hover:bg-jurnal-secondary/20 data-[state=open]:bg-jurnal-secondary/20"
+              >
                 <Link href={"/dashboard/recent"}>
                   <Clock className="size-4" />
                   <span className="font-medium">Terbaru</span>
@@ -257,7 +134,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild className="hover:gap-3 transition-all">
+              <SidebarMenuButton
+                asChild
+                className="hover:gap-3 transition-all data-[state=open]:text-sidebar-accent-foreground hover:bg-jurnal-secondary/20 data-[state=open]:bg-jurnal-secondary/20"
+              >
                 <Link href={"/dashboard/starred"}>
                   <Star className="size-4" />
                   <span className="font-medium">Berbintang</span>
@@ -266,10 +146,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroup>
+        <SidebarSeparator />
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild className="hover:gap-3 transition-all">
+              <SidebarMenuButton
+                asChild
+                className="hover:gap-3 transition-all data-[state=open]:text-sidebar-accent-foreground hover:bg-jurnal-secondary/20 data-[state=open]:bg-jurnal-secondary/20"
+              >
                 <Link href={"/dashboard/trash"}>
                   <Trash2 className="size-4" />
                   <span className="font-medium">Sampah</span>
@@ -277,7 +161,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild className="hover:gap-3 transition-all">
+              <SidebarMenuButton
+                asChild
+                className="hover:gap-3 transition-all data-[state=open]:text-sidebar-accent-foreground hover:bg-jurnal-secondary/20 data-[state=open]:bg-jurnal-secondary/20"
+              >
                 <Link href={"/dashboard/storage"}>
                   <Cloud className="size-4" />
                   <span className="font-medium">Penyimpanan</span>

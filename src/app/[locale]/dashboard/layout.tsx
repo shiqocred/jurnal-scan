@@ -8,10 +8,10 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     <div>
       <SidebarProvider>
         <AppSidebar />
-        <SidebarInset>
+        <div className="w-full flex flex-col min-h-screen">
           <Navbar />
-          {children}
-        </SidebarInset>
+          <SidebarInset>{children}</SidebarInset>
+        </div>
       </SidebarProvider>
     </div>
   );

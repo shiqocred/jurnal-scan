@@ -1,0 +1,37 @@
+{
+  "Login": {
+    "quote": {
+      "title": "<p>Lebih dari Sekadar <span>Menulis.</span></p>",
+      "description": "Ini bukan hanya tentang menulis. Ini tentang menyimpan jejak kehidupan, membangun arsip pribadi, dan mewariskan kisah untuk generasi berikutnya."
+    },
+    "form": {
+      "title": "Senang bertemu denganmu lagi",
+      "label": {
+        "email": "Email",
+        "password": "Password",
+        "remember_me": "Ingat saya",
+        "forget_password": "Lupa Password?",
+        "login": {
+          "link": "Kirim tautan masuk",
+          "password": "Lanjut dengan password",
+          "submit": "Masuk"
+        },
+        "sso": {
+          "google": "Masuk dengan Google",
+          "github": "Masuk dengan Github"
+        },
+        "opsi": "atau"
+      },
+      "error": {
+        "email": "Alamat email tidak valid",
+        "password": {
+          "char": "Password minimal 8 karakter",
+          "capital": "Password harus mengandung minimal 1 huruf kapital",
+          "number": "Password harus mengandung minimal 1 angka",
+          "symbol": "Password harus mengandung minimal 1 simbol"
+        }
+      },
+      "foot": "<p>Belum punya akun? <Link>Daftar sekarang</Link></p>"
+    }
+  }
+}
