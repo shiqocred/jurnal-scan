@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build:next": "next build",
-    "build:convex": "bun x convex deploy",
-    "build": "bun run build:convex && bun run build:next",
-    "start": "next start",
+    "build": "next build",
+    "start:convex": "bun x convex deploy",
+    "start:next": "next start",
+    "start": "bun run start:convex && bun run start:next",
     "lint": "next lint"
   },
   "dependencies": {
